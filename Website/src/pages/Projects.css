@@ -1,0 +1,23 @@
+.projects-section {
+    padding: 20px;
+  }
+  
+  .projects-section h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+  }
+  
+  .projects-section div {
+    margin-bottom: 20px;
+  }
+  
+  .projects-section h4 {
+    color: #34495e;
+    margin-bottom: 10px;
+  }
+  
+  .projects-section p {
+    color: #7f8c8d;
+    line-height: 1.6;
+  }
+  
