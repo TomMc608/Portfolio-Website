@@ -13,7 +13,7 @@ const SentimentAnalysis = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/analyze', { text });
+      const response = await axios.post('https://portfolio-website-ldsk.onrender.com', { text });
       setResult(response.data);
     } catch (error) {
       console.error('Error analyzing sentiment:', error);
