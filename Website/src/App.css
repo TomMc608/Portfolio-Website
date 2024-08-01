@@ -1,5 +1,15 @@
+/* App.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
 .App {
   text-align: center;
+  margin-top: 60px; /* Add this to account for the fixed navbar */
 }
 
 .App-header {
@@ -18,27 +28,16 @@
 }
 
 /* Additional styling */
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
 h2 {
-  color: #333;
+  color: #fff;
 }
 
 p {
-  color: #666;
-}
-
-nav {
-  margin-bottom: 2rem;
+  color: #ccc;
 }
 
 /* Responsive App Header */
@@ -62,4 +61,38 @@ nav {
   nav ul li {
     margin-bottom: 1rem;
   }
+}
+
+/* Home page specific styles */
+.home-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+}
+
+svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.node {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: 0.6;
 }
