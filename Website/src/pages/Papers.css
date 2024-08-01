@@ -1,0 +1,21 @@
+.papers-section {
+    padding: 20px;
+  }
+  
+  .paper-item {
+    margin-bottom: 20px;
+  }
+  
+  .paper-item h3 {
+    margin: 0 0 10px;
+  }
+  
+  .paper-item a {
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .paper-item a:hover {
+    text-decoration: underline;
+  }
+  

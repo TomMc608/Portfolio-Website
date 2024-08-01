@@ -15,7 +15,7 @@ const SentimentAnalysis = () => {
     setError(null); // Reset error state
     try {
       const response = await query({ inputs: text });
-     // console.log(response); // Output the response to the console
+      console.log(response); // Output the response to the console
       setResult(response[0][0]); // Assuming the first item in the first array is the result you need
     } catch (error) {
       setError(error.message);
