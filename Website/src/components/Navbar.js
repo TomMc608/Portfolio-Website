@@ -1,26 +1,41 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+// Navbar.js
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
   return (
     <nav className="navbar">
-      <div className="menu-icon" onClick={toggleMenu}>
-        <i className={isOpen ? "fa fa-times" : "fa fa-bars"}></i>
+      <div className="navbar-brand">
+        <Link to="/" onClick={closeMenu}>Brand</Link>
+        <button className="hamburger" onClick={toggleMenu}>
+          &#9776;
+        </button>
       </div>
-      <ul className={isOpen ? "nav-links open" : "nav-links"}>
-        <li><Link to="/" onClick={toggleMenu}>Home</Link></li>
-        <li><Link to="/about" onClick={toggleMenu}>About</Link></li>
-        <li><Link to="/projects" onClick={toggleMenu}>Projects</Link></li>
-        <li><Link to="/sentiment-analysis" onClick={toggleMenu}>Sentiment Analysis</Link></li>
-        <li><Link to="/papers" onClick={toggleMenu}>Papers</Link></li>
-      </ul>
+      <div className={`navbar-menu ${isOpen ? 'open' : ''}`}>
+        <ul>
+          <li><Link to="/" onClick={closeMenu}>Home</Link></li>
+          <li><Link to="/about" onClick={closeMenu}>About</Link></li>
+          <li><Link to="/projects" onClick={closeMenu}>Projects</Link></li>
+          <li><Link to="/sentiment-analysis" onClick={closeMenu}>Sentiment Analysis</Link></li>
+          <li><Link to="/papers" onClick={closeMenu}>Papers</Link></li>
+        </ul>
+      </div>
     </nav>
   );
 };
